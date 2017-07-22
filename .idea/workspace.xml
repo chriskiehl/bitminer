@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c45c4c7d-6262-4ea4-81a9-b251edc98b2b" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/miner/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fib.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/miner/fib.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/miner/server.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/miner/server.clj" />
+        <option value="$PROJECT_DIR$/project.clj" />
+        <option value="$PROJECT_DIR$/src/miner/fib.clj" />
+        <option value="$PROJECT_DIR$/src/miner/core.clj" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="50" />
+    <option name="y" value="-11" />
+    <option name="width" value="1871" />
+    <option name="height" value="1092" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="cursive.last.file.extension./home/devbox/Documents/miner/src" value="clj" />
+  </component>
+  <component name="ReplState" timestamp="1500752309509">{:repl-history {:ide [], :local [{:command &quot;(defn append-to-file\n  \&quot;Write a string to the end of a file\&quot;\n  [filename s]\n  (spit filename s :append true))\n\n(defn format-quote\n  \&quot;Delineate the beginning and end of a quote because it's convenient\&quot;\n  [quote]\n  (str \&quot;=== BEGIN QUOTE ===\\n\&quot; quote \&quot;=== END QUOTE ===\\n\\n\&quot;))\n\n(defn random-quote\n  \&quot;Retrieve a random quote and format it\&quot;\n  []\n  (format-quote (slurp \&quot;http://www.braveclojure.com/random-quote\&quot;)))\n\n(defn snag-quotes\n  [filename num-quotes]\n  (let [c (chan)]\n    (go (while true (append-to-file filename (&lt;! c))))\n    (dotimes [n num-quotes] (go (&gt;! c (random-quote))))))&quot;, :offset 583, :ns &quot;miner.core&quot;} {:command &quot;(snag-quotes \&quot;poop.txt\&quot; 10)&quot;, :offset 27, :ns &quot;miner.core&quot;} {:command &quot;(def echo-chan (chan))\n\n(doseq   [z zs] (go (Thread/sleep (rand 100)) (&gt;! echo-chan z)))\n(dotimes [_ 3] (println (&lt;!! echo-chan)))\n\n(close! echo-chan)&quot;, :offset 150, :ns &quot;miner.core&quot;} {:command &quot;(def echo-chan (chan))\n(def zs [-0.178654, 0.828305, 0.0592247, -0.0121089, -1.48014,\n         -0.315044, -0.324796, -0.676357, 0.16301, -0.858164])\n\n(doseq   [z zs] (go (Thread/sleep (rand 100)) (&gt;! echo-chan z)))\n(dotimes [_ 3] (println (&lt;!! echo-chan)))\n\n\n(close! echo-chan)&quot;, :offset 259, :ns &quot;miner.core&quot;} {:command &quot;echo-chan&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(doseq [z zs] println)&quot;, :offset 21, :ns &quot;miner.core&quot;} {:command &quot;(def zs [-0.178654, 0.828305, 0.0592247, -0.0121089, -1.48014,\n         -0.315044, -0.324796, -0.676357, 0.16301, -0.858164])&quot;, :offset 125, :ns &quot;miner.core&quot;} {:command &quot;(zs)&quot;, :offset 4, :ns &quot;miner.core&quot;} {:command &quot;(println zs)&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(def zsz [-0.178654, 0.828305, 0.0592247, -0.0121089, -1.48014,\n         -0.315044, -0.324796, -0.676357, 0.16301, -0.858164])&quot;, :offset 126, :ns &quot;miner.core&quot;} {:command &quot;(println \&quot;asdf\&quot;)&quot;, :offset 15, :ns &quot;miner.core&quot;} {:command &quot;(close! echo-chan)&quot;, :offset 17, :ns &quot;miner.core&quot;} {:command &quot;NoClassDefFoundError&quot;, :offset 20, :ns &quot;miner.core&quot;} {:command &quot;zsz&quot;, :offset 3, :ns &quot;miner.core&quot;} {:command &quot;zs&quot;, :offset 2, :ns &quot;miner.core&quot;} {:command &quot;(def echo-chan (chan))\n(def repl-chan (chan))\n\n(dotimes [_ 10] (go (&gt;! repl-chan (&lt;! echo-chan))))\n(doseq   [z zs] (go (Thread/sleep (rand 100)) (&gt;! echo-chan z)))\n(dotimes [_ 3] (println (&lt;!! (second (alts!! [echo-chan (timeout 500)])))))\n\n(close! echo-chan)\n(close! repl-chan)&quot;, :offset 278, :ns &quot;miner.core&quot;} {:command &quot;(println \&quot;hi?\&quot;)&quot;, :offset 13, :ns &quot;miner.core&quot;} {:command &quot;(println \&quot;to\&quot;)&quot;, :offset 12, :ns &quot;miner.core&quot;} {:command &quot;(def x 10)&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(def huh (go (println (&lt;! hi-chan))))&quot;, :offset 37, :ns &quot;miner.core&quot;} {:command &quot;(def hi-chan (chan))\n(doseq [n (range 1000)]\n  (go (&gt;! hi-chan (str \&quot;hi \&quot; n))))&quot;, :offset 79, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;To\&quot;)&quot;, :offset 16, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;Yo\&quot;)&quot;, :offset 18, :ns &quot;miner.core&quot;} {:command &quot;hi-chan&quot;, :offset 7, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;do\&quot;)&quot;, :offset 16, :ns &quot;miner.core&quot;} {:command &quot;(def hi-chan (chan))&quot;, :offset 20, :ns &quot;miner.core&quot;} {:command &quot;(go (println (&lt;! hi-chan)))&quot;, :offset 27, :ns &quot;miner.core&quot;} {:command &quot;(go (while true (println (&lt;! hi-chan))))&quot;, :offset 40, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;hey\&quot;)&quot;, :offset 17, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;heya\&quot;)&quot;, :offset 18, :ns &quot;miner.core&quot;} {:command &quot;(&gt;!! hi-chan \&quot;Howdy\&quot;)&quot;, :offset 19, :ns &quot;miner.core&quot;} {:command &quot;(go (while true (digest/sha-256 (&lt;! hi-chan))))&quot;, :offset 47, :ns &quot;miner.core&quot;} {:command &quot;0x1&quot;, :offset 3, :ns &quot;miner.core&quot;} {:command &quot;0x01&quot;, :offset 3, :ns &quot;miner.core&quot;} {:command &quot;0x011&quot;, :offset 4, :ns &quot;miner.core&quot;} {:command &quot;0x00011&quot;, :offset 5, :ns &quot;miner.core&quot;} {:command &quot;0xg&quot;, :offset 3, :ns &quot;miner.core&quot;} {:command &quot;0xf&quot;, :offset 3, :ns &quot;miner.core&quot;} {:command &quot;0x10&quot;, :offset 4, :ns &quot;miner.core&quot;} {:command &quot;0x11&quot;, :offset 4, :ns &quot;miner.core&quot;} {:command &quot;0x12&quot;, :offset 4, :ns &quot;miner.core&quot;} {:command &quot;0x01003456\t&quot;, :offset 11, :ns &quot;miner.core&quot;} {:command &quot;0x01003456&quot;, :offset 10, :ns &quot;miner.core&quot;} {:command &quot;0x181bc330&quot;, :offset 10, :ns &quot;miner.core&quot;} {:command &quot;(require '[clojure.java.io :as io])\n(import '[java.net ServerSocket])&quot;, :offset 69, :ns &quot;miner.core&quot;} {:command &quot;(ServerSocket. 3333)&quot;, :offset 20, :ns &quot;miner.core&quot;} {:command &quot;(import 'java.net.Socket)&quot;, :offset 24, :ns &quot;miner.core&quot;} {:command &quot;(Socket. \&quot;stratum.slushpool.com\&quot;, 3333)&quot;, :offset 39, :ns &quot;miner.core&quot;} {:command &quot;(def socket (Socket. \&quot;stratum.slushpool.com\&quot;, 3333))&quot;, :offset 52, :ns &quot;miner.core&quot;} {:command &quot;socket&quot;, :offset 6, :ns &quot;miner.core&quot;} {:command &quot;(def outstream (.getOutputStream socket))&quot;, :offset 41, :ns &quot;miner.core&quot;} {:command &quot;(def instream (.getInputStream socket))&quot;, :offset 39, :ns &quot;miner.core&quot;} {:command &quot;(def outstream (io/inputstream-&gt;reader (.getOutputStream socket)))&quot;, :offset 66, :ns &quot;miner.core&quot;} {:command &quot;(import 'java.io.InputStreamReader)&quot;, :offset 34, :ns &quot;miner.core&quot;} {:command &quot;(import 'java.io.BufferedReader)&quot;, :offset 31, :ns &quot;miner.core&quot;} {:command &quot;(import 'java.io.PrintWriter)&quot;, :offset 28, :ns &quot;miner.core&quot;} {:command &quot;(def outstream (PrintWriter. (.getOutputStream socket)))&quot;, :offset 56, :ns &quot;miner.core&quot;} {:command &quot;outstream&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(def outstream (PrintWriter. (.getOutputStream socket) true))&quot;, :offset 61, :ns &quot;miner.core&quot;} {:command &quot;(.println outstream \&quot;{\\\&quot;id\\\&quot;: 1, \\\&quot;method\\\&quot;: \\\&quot;mining.subscribe\\\&quot;, \\\&quot;params\\\&quot;: []}\\n\&quot;))&quot;, :offset 0, :ns &quot;miner.core&quot;} {:command &quot;(def outstream (BufferedReader. (InputStreamReader. (.getOutputStream socket))))&quot;, :offset 80, :ns &quot;miner.core&quot;} {:command &quot;(def instream (BufferedReader. (InputStreamReader. (.getInputStream socket))))&quot;, :offset 78, :ns &quot;miner.core&quot;} {:command &quot;(.readLine instream)&quot;, :offset 19, :ns &quot;miner.core&quot;} {:command &quot;(println \&quot;hi\&quot;)&quot;, :offset 12, :ns &quot;miner.core&quot;} {:command &quot;(.print outstream \&quot;{\\\&quot;id\\\&quot;: 1, \\\&quot;method\\\&quot;: \\\&quot;mining.subscribe\\\&quot;, \\\&quot;params\\\&quot;: []}\\n\&quot;)&quot;, :offset 84, :ns &quot;miner.core&quot;} {:command &quot;(println (.read instream))&quot;, :offset 26, :ns &quot;miner.core&quot;} {:command &quot;(.println outstream \&quot;{\\\&quot;id\\\&quot;: 1, \\\&quot;method\\\&quot;: \\\&quot;mining.subscribe\\\&quot;, \\\&quot;params\\\&quot;: []}\\n\&quot;)&quot;, :offset 86, :ns &quot;miner.core&quot;} {:command &quot;(\&quot;ASDSAD\&quot;)&quot;, :offset 8, :ns &quot;miner.core&quot;} {:command &quot;(println \&quot;ASDSAD\&quot;)&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(pprint (json/read-str (.readLine instream)))&quot;, :offset 45, :ns &quot;miner.core&quot;} {:command &quot;(digest/sha-256 \&quot;asdf\&quot;)&quot;, :offset 22, :ns &quot;miner.core&quot;} {:command &quot;(-&gt; \&quot;Hello\&quot; (digest/sha-256) (digest/sha-256))&quot;, :offset 46, :ns &quot;miner.core&quot;} {:command &quot;(-&gt; \&quot;Hello\&quot; (digest/sha-256) (digest/sha-256) (digest/sha-256))&quot;, :offset 62, :ns &quot;miner.core&quot;} {:command &quot;(double-hash \&quot;Hello\&quot;)&quot;, :offset 19, :ns &quot;miner.core&quot;} {:command &quot;(require '[clojure.contrib.math :as math])&quot;, :offset 42, :ns &quot;miner.core&quot;} {:command &quot;(require clojure.contrib.math)&quot;, :offset 29, :ns &quot;miner.core&quot;} {:command &quot;(def a (bigint (calc-difficulty 0x1b0404cb)))&quot;, :offset 45, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; (.getBytes a))&quot;, :offset 27, :ns &quot;miner.core&quot;} {:command &quot;a&quot;, :offset 1, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; a)&quot;, :offset 15, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; (str a))&quot;, :offset 21, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; (new java.math.BigInteger (.getBytes (str a))))&quot;, :offset 60, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; \&quot;1\&quot;)&quot;, :offset 16, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%x\&quot; 1)&quot;, :offset 15, :ns &quot;miner.core&quot;} {:command &quot;(format \&quot;%X\&quot; 1)&quot;, :offset 15, :ns &quot;miner.core&quot;} {:command &quot;(.toString \&quot;1\&quot; 2)&quot;, :offset 17, :ns &quot;miner.core&quot;} {:command &quot;(Integer/toString \&quot;1\&quot; 2)&quot;, :offset 24, :ns &quot;miner.core&quot;} {:command &quot;(Integer/toString 0x1 2)&quot;, :offset 22, :ns &quot;miner.core&quot;} {:command &quot;(Integer/toString 0xf2 2)&quot;, :offset 22, :ns &quot;miner.core&quot;} {:command &quot;(Integer/toString 0xf2 16)&quot;, :offset 25, :ns &quot;miner.core&quot;} {:command &quot;(class? 1)&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(class 1)&quot;, :offset 9, :ns &quot;miner.core&quot;} {:command &quot;(class 0x1b0404cb)&quot;, :offset 18, :ns &quot;miner.core&quot;} {:command &quot;(class (calc-difficulty 0x1b0404cb))&quot;, :offset 36, :ns &quot;miner.core&quot;} {:command &quot;(long (calc-difficulty 0x1b0404cb))&quot;, :offset 35, :ns &quot;miner.core&quot;} {:command &quot;(bigint (calc-difficulty 0x1b0404cb))&quot;, :offset 8, :ns &quot;miner.core&quot;} {:command &quot;(/ 3 4)&quot;, :offset 6, :ns &quot;miner.core&quot;} {:command &quot;(calc-difficulty 0x1b0404cb)&quot;, :offset 0, :ns &quot;miner.core&quot;} {:command &quot;(Math/pow 2 192)&quot;, :offset 15, :ns &quot;miner.core&quot;} {:command &quot;(load-file \&quot;src/miner/core.clj\&quot;)&quot;, :offset 30, :ns &quot;miner.core&quot;} {:command &quot;(require '[clojure.math.numeric-tower :as math])&quot;, :offset 48, :ns &quot;miner.core&quot;}], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Clojure REPL.Dev">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local">
+      <setting name="replType" value="1" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="miner" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="LeiningenRunConfiguration" factoryName="Leiningen">
+      <LeiningenRunnerParameters>
+        <option name="myGoals">
+          <list />
+        </option>
+        <option name="myWorkingDirectory" value="" />
+        <option name="profiles" value="" />
+        <option name="trampoline" value="false" />
+      </LeiningenRunnerParameters>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="Dev" type="ClojureREPL" factoryName="Local">
+      <setting name="replType" value="1" />
+      <module name="miner" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Clojure REPL.Dev" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c45c4c7d-6262-4ea4-81a9-b251edc98b2b" name="Default" comment="" />
+      <created>1500009672993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1500009672993</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="50" y="-11" width="1871" height="1092" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30115196" sideWeight="0.515625" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31321996" sideWeight="0.484375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19473396" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/miner/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/fib.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/server.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poop.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poop.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/server.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/fib.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/miner/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
