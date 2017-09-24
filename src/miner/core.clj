@@ -1,147 +1,121 @@
 (ns miner.core
-  (:require digest)
-  (:import [java.net Socket])
-  (:import java.io.InputStreamReader)
-  (:import java.io.BufferedReader)
-  (:import java.io.PrintWriter)
   (:require [clojure.math.numeric-tower :as math])
   (:require [clojure.data.json :as json])
-  (:use clojure.string)
   (:use clojure.pprint)
+  (:use miner.mining)
+  (:use miner.server)
+  (:use miner.binascii)
+  (:require [miner.slushpool :as slush])
   (:require [clojure.core.async
              :as a
-             :refer [>! <! >!! <!! go chan buffer
-                     close! thread alts!! timeout]])
+             :refer [>! <! >!! <!! go go-loop chan buffer
+                     sliding-buffer close! thread alts! alts!! timeout]])
   (:gen-class))
 
 
-(declare hexToByte)
+(defn notify-workers
+  "Push the new mining data to workers (atom watcher func)"
+  [ch context key old-val new-val]
+  (>!! ch {:new-job new-val}))
+
+
+(defn enqueue-work
+  "Push a given job onto a work queue keyed by pdiff value"
+  ;; TODO: actually consume from this queue
+  [work-pool difficulty new-job]
+  (if (not (contains? work-pool difficulty))
+    (assoc work-pool difficulty (conj (clojure.lang.PersistentQueue/EMPTY) val))
+    (assoc work-pool difficulty (conj (get work-pool difficulty) new-job))))
+
+
+(defn build-stat-summary
+  "Calculates basic stats about the hash-rate of the workers"
+  [start-time workers]
+  (let [stat-chs (map last workers)
+        stats (map <!! stat-chs)
+        total-calls (:total-calls (apply merge-with + stats))
+        runtime (int (/ (- (System/currentTimeMillis) start-time) 1000))
+        hash-per-sec (int (/ total-calls runtime))]
+    {:runtime runtime
+     :total-hashes total-calls
+     :hashes-per-second hash-per-sec}))
+
+
+;; Specify our final hashing function
+(def hashing-func (-> block-hasher
+                      (wrap-bigint)
+                      (wrap-result)
+                      (wrap-metrics)))
+
+
+;; Populate the workers
+(def start-worker (make-worker hashing-func))
+
+
+(defn start-supervisor
+  "Primary control point of the mining operation"
+  []
+  (let [start-time (System/currentTimeMillis)
+        [send-ch recv-ch] (make-server "stratum.slushpool.com" 3333)
+        msg-id (atom 3)
+        subscription (slush/subscribe-client send-ch recv-ch)
+        nonce (:nonce subscription)
+        nonce-size (:nonce2-size subscription)
+        current-difficulty (atom Integer/MAX_VALUE)
+        job-pool (atom {})
+        active-job (atom {})
+        grab-next (atom false)
+        num-cores (.availableProcessors (Runtime/getRuntime))
+        nonce-offsets (split-nonce-range (max-nonce nonce-size) num-cores)
+        workers (map #(start-worker %1) nonce-offsets)
+        worker-in-chs (map #(nth %1 1) workers)]
+
+    ;; attach listeners to notify workers of latest active job
+    (doseq [[pid in-ch out stats] workers]
+      (add-watch active-job pid (partial notify-workers in-ch)))
+
+    ;; listening for successfully mined blocks from workers
+    (go-loop []
+      (let [chans (into [] (map #(nth %1 2) workers))
+            [payload ch] (alts! chans)]
+        (println "Message:: " payload)
+        (>! send-ch (slush/submit-msg! payload))
+        (swap! msg-id inc)
+        (recur)))
+
+    (go-loop []
+      (let [msg (<! recv-ch)
+            params (slush/process-msg msg)
+            method (get msg "method")]
+
+        (when (= method "mining.set_difficulty")
+          (when (< (:difficulty params) @current-difficulty)
+            ;; Success is getting a share in the pool with our
+            ;; super slow cpu miner. As such, we tail the jobs
+            ;; which have lower difficulty requirements
+            (reset! grab-next true))
+          (reset! current-difficulty (:difficulty params)))
+
+        (when (= method "mining.notify")
+          (let [this-job (merge params {:nonce nonce :difficulty @current-difficulty})]
+            (swap! job-pool
+                   enqueue-work
+                   @current-difficulty
+                   this-job)
+            (when (some true? [(:clean params) @grab-next (empty? @active-job)])
+              (reset! grab-next false)
+              (reset! active-job this-job))))
+        (recur)))
+
+    ; show some stats every 20 seconds
+    (go-loop []
+      (let [_ (<! (timeout 20000))]
+        (pprint (build-stat-summary start-time workers)))
+      (recur))
+    ))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!"))
-
-
-(defn double-hash [content]
-  (-> content
-      (digest/sha-256)
-      (digest/sha-256)))
-
-
-(defn calc-difficulty [bits]
-  (let [base (bit-and bits 0xffffff)
-        exponent (bit-shift-right bits 24)
-        res (* base (math/expt 2 (* 8 (- exponent 3))))]
-    res))
-
-
-(defn target-string [big-num]
-  (format "%064x" (biginteger big-num)))
-
-
-(defn unhexify [hex]
-  (byte-array
-         (map
-           (fn [[x y]] (hexToByte (str x y )))
-           (partition 2 hex))))
-
-
-(defn hexToByte [hexString]
-  ; TODO: pre-condition len(input) == 2
-  ; Java only has signed bytes.
-  (byte (.byteValue (Integer/valueOf hexString, 16))))
-
-
-(defn to-hex [num, width]
-  (format (format "%%0%sx" width) num))
-
-
-(defn hexify [s]
-  (apply str
-         (map #(format "%02x" (int %)) s)))
-
-
-(def pool-data {:params
-                   ["4393db"
-                    "6ab6fef8e441084bdce1d6e795faafd41998d46f01509d9f0000000000000000"
-                    "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4503c44307fabe6d6d88c95140e2f1d8c09f1873aef802b6fa8e1a3c5e0700f7c2711c781bf2fc2b180100000000000000"
-                    "db93432f736c7573682f0000000001dc4c8a4f000000001976a9147c154ed1dc59609e3d26abb2df2ea3d587cd8c4188ac00000000"
-                    ["467defd387081cbeedf955612a9207e047c4499ee91ebb194fd229eb1dd7db90"
-                     "b21f5e98fe3cfb6064b205a09f2397f95c0b79299c599f4459086ecd5fdf9dbe"
-                     "bb65c602705191e38626afefacfbd9eae4ee1927ca62df517e709918427aa272"
-                     "e97e52a3fd6d356d3adfcc4e263893b73668e1edf7a475bd6c3333392a29a373"
-                     "5788a135fc7221c88bd5016e9f3a3807cf3ba81570d104b915699e8b17e0d494"
-                     "b7cc8c172e55e3b8c3dff1a4dcb5e141efead6ba539a6802234c7faae66e9d80"
-                     "b67626df2692d367bb22e0ab3e404b5950415ad903553daf671ff2bf100c8343"
-                     "1f3257dfc01001eea81f055657acdb9d0327191fa9281de7e9f31793f70670c4"
-                     "230ed41b8833e02b719637f9487d6fe0c043ba5fc2da27a145717d7787ad1ac6"
-                     "fabcf4094628afee2aed733e555b55b5c131d5df9a389ffcb6a5f7fa2a8885c4"
-                     "a0a7f7768969de7f772a32c7039a049b37fdf9c681c7205a6ef62fe0812983ef"]
-                    "20000002"
-                    "18015ddc"
-                    "596ba901"
-                    true],
-          "id" nil,
-          "method" "mining.notify"})
-
-(defn build-coinbase [nonce1 nonce2 params]
-  (let [[jobid
-         prevhash
-         coin1
-         coin2
-         merkle-hashes
-         version
-         nbits
-         ntime
-         clean
-         ] (:params pool-data)]
-    (unhexify (str coin1 nonce1 nonce2 coin2))))
-
-
-(defn make-nonce [curr]
-  (bit-and (+ curr 1) 0xFFFFFF))
-
-
-(let [[jobid
-       prevhash
-       coin1
-       coin2
-       merkle-hashes
-       version
-       nbits
-       ntime
-       clean
-       ] (:params pool-data)])
-
-(defn calc-hashes [nonce1 nonce2-seed params]
-  (let [start (System/currentTimeMillis)
-        end (+ start 10000)
-        nonce2 (atom nonce2-seed)]
-    (while (< (System/currentTimeMillis) end)
-      (let [cb (build-coinbase nonce1 (to-hex @nonce2 4) params)
-            hash (digest/sha-256 cb)]
-        (if (ends-with? hash "00000")
-          (println "FOUND ONE!!!" nonce2 hash))
-        (swap! nonce2 inc)))
-    (println "Hashes calculated: " @nonce2)))
-
-
-(defn calc-hashes-par [nonce1 nonce2-seed params]
-  (let [start (System/currentTimeMillis)
-        end (+ start 1000)
-        nonce2 (atom nonce2-seed)
-        in (chan 4)]
-    (doseq [x (range 4)]
-      (go
-        (while true
-          (let [cb (build-coinbase nonce1 (to-hex (<! in) 4) params)
-                  hash (digest/sha-256 cb)]
-              (if (ends-with? hash "00000")
-                (println "FOUND ONE!!!" nonce2 hash))
-              ))))
-    (while (< (System/currentTimeMillis) end)
-      (>!! in @nonce2)
-      (swap! nonce2 inc))
-    (println "Hashes calculated: " @nonce2)))
-
