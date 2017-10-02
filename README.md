@@ -14,6 +14,7 @@ Learning. I wanted to peel back the covers on Bitcoin and pool based mining, and
  - [X] Clojure (so pretty cool) 
  - [X] Slow 
  - [X] Costs more to run than it will ever make back in bitcoin
+ - [X] Includes 2 pretty solid tests
  - [X] Peeled back the covers a bit on how Bitcoin works
 
 ### Intallation & Operation
