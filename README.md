@@ -18,6 +18,8 @@ Learning. I wanted to peel back the covers on Bitcoin and pool based mining, and
 
 ### Intallation & Operation
 
+Wanna run it?  
+
     git clone https://github.com/chriskiehl/bitminer.git 
     
 Leningen should be used to run the repl and resolve the deps. 
