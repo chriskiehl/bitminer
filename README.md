@@ -29,7 +29,7 @@ Leningen should be used to run the repl and resolve the deps.
     > (start-supervisor) 
 
 
-
+Then it's a waiting game. Shortly before the heat death of the universe you should be able to nab a share.
 
 
 [0] Based on miners (as of this 2017) operating in the TH/s range, and my current i7, being run inside of a vm, using only a few cores, being in the KH/s range. 
