@@ -1,12 +1,13 @@
 (ns miner.slushpool
   "Creators and parsers for the SlushPool message format"
-  (:require [miner.binascii :as binascii]
+  (:require [environ.core :refer [env]]
+            [miner.binascii :as binascii]
             [clojure.core.async
              :refer [>! <! >!! <!! ]]))
 
 
-(def worker-id "ckiehl.worker1")
-(def super-secret "password")
+(def worker-id (env :username))
+(def super-secret (env :password))
 
 
 (defn- make-subscribe-msg []
