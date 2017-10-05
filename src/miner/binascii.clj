@@ -3,7 +3,6 @@
    hexadecimal and byte representations of data")
 
 
-
 (defn hex-to-byte
   "Converts a hex value into its byte value while
    taking care to wrap around unsigned

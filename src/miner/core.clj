@@ -1,15 +1,14 @@
 (ns miner.core
-  (:require [clojure.math.numeric-tower :as math])
-  (:require [clojure.data.json :as json])
-  (:use clojure.pprint)
-  (:use miner.mining)
-  (:use miner.server)
-  (:use miner.binascii)
-  (:require [miner.slushpool :as slush])
   (:require [clojure.core.async
              :as a
              :refer [>! <! >!! <!! go go-loop chan buffer
-                     sliding-buffer close! thread alts! alts!! timeout]])
+                     sliding-buffer close! thread alts! alts!! timeout]]
+            [clojure.data.json :as json]
+            [clojure.math.numeric-tower :as math]
+            [clojure.pprint :refer [pprint]]
+            [miner.mining :as mining]
+            [miner.server :as server]
+            [miner.slushpool :as slush])
   (:gen-class))
 
 
@@ -42,21 +41,21 @@
 
 
 ;; Specify our final hashing function
-(def hashing-func (-> block-hasher
-                      (wrap-bigint)
-                      (wrap-result)
-                      (wrap-metrics)))
+(def hashing-func (-> mining/block-hasher
+                      (mining/wrap-bigint)
+                      (mining/wrap-result)
+                      (mining/wrap-metrics)))
 
 
 ;; Populate the workers
-(def start-worker (make-worker hashing-func))
+(def start-worker (mining/make-worker hashing-func))
 
 
 (defn start-supervisor
   "Primary control point of the mining operation"
   []
   (let [start-time (System/currentTimeMillis)
-        [send-ch recv-ch] (make-server "stratum.slushpool.com" 3333)
+        [send-ch recv-ch] (server/make-server "stratum.slushpool.com" 3333)
         msg-id (atom 3)
         subscription (slush/subscribe-client send-ch recv-ch)
         nonce (:nonce subscription)
@@ -66,7 +65,7 @@
         active-job (atom {})
         grab-next (atom false)
         num-cores (.availableProcessors (Runtime/getRuntime))
-        nonce-offsets (split-nonce-range (max-nonce nonce-size) num-cores)
+        nonce-offsets (mining/split-nonce-range (mining/max-nonce nonce-size) num-cores)
         workers (map #(start-worker %1) nonce-offsets)
         worker-in-chs (map #(nth %1 1) workers)]
 

@@ -1,12 +1,11 @@
 (ns miner.mining
-  (:require digest)
-  (:import java.util.UUID)
-  (:require [clojure.math.numeric-tower :as math])
-  (:use miner.binascii)
-  (:require [clojure.core.async
+  (:require [digest]
+            [clojure.core.async
              :as a
              :refer [>! <! >!! <!! go go-loop chan buffer
-                     sliding-buffer close! thread alts! alts!! timeout]]))
+                     sliding-buffer close! thread alts! alts!! timeout]]
+            [clojure.math.numeric-tower :as math]
+            [miner.binascii :refer :all]))
 
 
 (defn concat-bytes

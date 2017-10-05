@@ -1,7 +1,7 @@
 (ns miner.slushpool
   "Creators and parsers for the SlushPool message format"
-  (:require [miner.binascii :as binascii])
-  (:require [clojure.core.async
+  (:require [miner.binascii :as binascii]
+            [clojure.core.async
              :refer [>! <! >!! <!! ]]))
 
 

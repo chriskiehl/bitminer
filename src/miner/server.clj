@@ -1,15 +1,13 @@
 (ns miner.server
-  (:use clojure.pprint)
-  (:require [clojure.data.json :as json])
-  (:import [java.net Socket SocketTimeoutException])
-  (:import java.io.InputStreamReader)
-  (:import java.io.BufferedReader)
-  (:import java.io.PrintWriter)
-
-  (:require [clojure.core.async
+  (:require [clojure.data.json :as json]
+            [clojure.core.async
              :as a
              :refer [>! <! >!! <!! go go-loop chan buffer sliding-buffer
-                     close! thread alt! alts! alts!! timeout]]))
+                     close! thread alt! alts! alts!! timeout]])
+  (:import java.io.InputStreamReader
+           [java.net Socket SocketTimeoutException]
+           java.io.BufferedReader
+           java.io.PrintWriter))
 
 
 (defn make-sender
