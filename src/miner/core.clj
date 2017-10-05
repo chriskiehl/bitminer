@@ -22,7 +22,7 @@
   "Push a given job onto a work queue keyed by pdiff value"
   ;; TODO: actually consume from this queue
   [work-pool difficulty new-job]
-  (if (not (contains? work-pool difficulty))
+  (if-not (contains? work-pool difficulty)
     (assoc work-pool difficulty (conj (clojure.lang.PersistentQueue/EMPTY) val))
     (assoc work-pool difficulty (conj (get work-pool difficulty) new-job))))
 
@@ -66,8 +66,8 @@
         grab-next (atom false)
         num-cores (.availableProcessors (Runtime/getRuntime))
         nonce-offsets (mining/split-nonce-range (mining/max-nonce nonce-size) num-cores)
-        workers (map #(start-worker %1) nonce-offsets)
-        worker-in-chs (map #(nth %1 1) workers)]
+        workers (map #(start-worker %) nonce-offsets)
+        worker-in-chs (map #(nth % 1) workers)]
 
     ;; attach listeners to notify workers of latest active job
     (doseq [[pid in-ch out stats] workers]
